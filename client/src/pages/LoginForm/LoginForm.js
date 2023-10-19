@@ -14,6 +14,9 @@ import {
 	Stack,
 	Text,
 	VStack,
+	Alert,
+	AlertIcon,
+	AlertDescription,
 } from '@chakra-ui/react';
 import { Logo } from './logo';
 import AuthService from '../../services/AuthService';
@@ -107,6 +110,14 @@ export function LoginForm() {
 									>
 										Login
 									</Button>
+									{error && (
+										<Alert status='error'>
+											<AlertIcon />
+											<AlertDescription>
+												Email ou senha incorretos
+											</AlertDescription>
+										</Alert>
+									)}
 								</Stack>
 							</form>
 						</CardBody>
@@ -116,8 +127,9 @@ export function LoginForm() {
 						<CardBody>
 							<Center>
 								<HStack fontSize='sm' spacing='1'>
+									<Text>Novo no CEI?</Text>
 									<Link isExternal color='#0969da' href='#'>
-										Criar conta.
+										Crie a sua conta aqui.
 									</Link>
 								</HStack>
 							</Center>
